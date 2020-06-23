@@ -19,7 +19,7 @@ const setPageIndicator = function(index) {
         pageIndicator.classList.remove('active');
     }
     pageIndicators[index].classList.add('active')
-    buttonNext.innerHTML = index === numOfPages ? 'DONE' : 'NEXT'
+    buttonNext.innerHTML = index == numOfPages ? 'DONE' : 'NEXT'
 }
 
 const handlePageIndicatorDotClick = function (e) {
