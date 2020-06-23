@@ -5,7 +5,7 @@ const handleSelectionButtonClick = function(e) {
     e.preventDefault();
 }
 for(let selection of selectionButtons) {
-    selection.addEventListener('click', handleSelectionButtonClick)
+    selection.addEventListener('click touchstart', handleSelectionButtonClick)
 } 
 
 const pageIndicatorContainer = document.getElementById('page-indicator-container')
@@ -32,14 +32,14 @@ for(let pageIndicator of pageIndicators) {
 const buttonBack = document.querySelector('#button-back');
 const buttonNext = document.querySelector('#button-next');
 
-buttonBack.addEventListener('click', function() {
+buttonBack.addEventListener('click touchstart', function() {
     if(pageIndex > 0) {
         pageIndex--;
         setPageIndicator(pageIndex);
     }
 })
 
-buttonNext.addEventListener('click', function() {
+buttonNext.addEventListener('click touchstart', function() {
     if(pageIndex < numOfPages) {
         pageIndex++;
         setPageIndicator(pageIndex);
