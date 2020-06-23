@@ -1,11 +1,13 @@
 // Handling of selecton
 const selectionButtons = document.querySelectorAll('.selection-container .selection-button');
 const handleSelectionButtonClick = function(e) {
-    this.classList.toggle('active')
     e.preventDefault();
+    this.classList.toggle('active')
 }
+
 for(let selection of selectionButtons) {
-    selection.addEventListener('click touchstart', handleSelectionButtonClick)
+    selection.addEventListener('click', handleSelectionButtonClick, false)
+    selection.addEventListener('touchstart', handleSelectionButtonClick, false)
 } 
 
 const pageIndicatorContainer = document.getElementById('page-indicator-container')
@@ -21,12 +23,14 @@ const setPageIndicator = function(index) {
 }
 
 const handlePageIndicatorDotClick = function (e) {
+    e.preventDefault();
     pageIndex = e.target.dataset.page;
     setPageIndicator(pageIndex);
 }
 
 for(let pageIndicator of pageIndicators) {
     pageIndicator.addEventListener('click', handlePageIndicatorDotClick)
+    pageIndicator.addEventListener('touchstart', handlePageIndicatorDotClick)
 }
 
 const buttonBack = document.querySelector('#button-back');
