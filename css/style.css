@@ -73,6 +73,11 @@ p.detail {
     max-width: inherit;
 }
 
+.nav-bottom .page-indicator .dot {
+    cursor: pointer;
+    margin: 0 .125em;
+}
+
 .nav-bottom .page-indicator .dot:after {
     content: '\2022';
     display: inline-block;
