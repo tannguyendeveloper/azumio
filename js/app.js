@@ -36,19 +36,27 @@ for(let pageIndicator of pageIndicators) {
 const buttonBack = document.querySelector('#button-back');
 const buttonNext = document.querySelector('#button-next');
 
-buttonBack.addEventListener('click touchstart', function() {
+const goToPreviousPage = function(e) {
+    e.preventDefault();
     if(pageIndex > 0) {
         pageIndex--;
         setPageIndicator(pageIndex);
     }
-})
+}
 
-buttonNext.addEventListener('click touchstart', function() {
+const goToNextPage = function(e) {
+    e.preventDefault();
     if(pageIndex < numOfPages) {
         pageIndex++;
         setPageIndicator(pageIndex);
     }
-})
+}
+
+// Back and next button event listeners
+buttonBack.addEventListener('click', goToPreviousPage)
+buttonBack.addEventListener('touchstart', goToPreviousPage)
+buttonNext.addEventListener('click', goToNextPage)
+buttonNext.addEventListener('touchstart', goToNextPage)
 
 let pageIndex = 0;
 setPageIndicator(pageIndex);
